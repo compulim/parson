@@ -114,6 +114,8 @@ static JSON_Value * json_value_init_string_no_copy(char *string);
 
 /* Parser */
 static JSON_Status  skip_quotes(const char **string);
+static int          scan_hex(const char c);
+static int          scan_utf_16(const char *str, unsigned int *cp);
 static int          parse_utf_16(const char **unprocessed, char **processed);
 static char *       process_string(const char *input, size_t len);
 static char *       get_quoted_string(const char **string);
